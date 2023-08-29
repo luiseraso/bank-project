@@ -1,0 +1,4 @@
+rootProject.name = 'BankProject'
+include 'account-server'
+include 'account-client'
+
