@@ -28,6 +28,6 @@ public class AccountTest {
         Account account = new Account("client001", 20.0);
         var exception = Assertions.assertThrows(InsufficientBalanceException.class, () ->
                 account.withdraw(50.0));
-        assertTrue(exception.getMessage().startsWith("Insufficient balance for user"));
+        assertTrue(exception.getMessage().startsWith("Insufficient balance in account"));
     }
 }
