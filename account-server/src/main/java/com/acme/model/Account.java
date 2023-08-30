@@ -3,8 +3,12 @@ package com.acme.model;
 import com.acme.model.exceptions.InsufficientBalanceException;
 
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Account {
+
+    private static final Logger logger = LoggerFactory.getLogger(Account.class);
 
     private final UUID id;
     private final String client;
@@ -17,12 +21,12 @@ public class Account {
     }
 
     public void deposite(double value) {
-        System.out.printf("Deposite: %f in account %s\n" , value, id);
+        logger.info("Deposite: account={}, value={}", id, value);
         this.balance += value;
     }
 
     public void withdraw(double value) {
-        System.out.printf("Withdraw: %f in account %s\n" , value, id);
+        logger.info("Withdraw: account={}, value={}" , id, value);
         if(value > balance) {
             throw new InsufficientBalanceException(this);
         }
@@ -30,7 +34,7 @@ public class Account {
     }
 
     public void accountInformation() {
-        System.out.printf("Account Information: id= %s, client= %s, balance= %f\n", id, client, balance);
+        logger.info("Account Information: account={}, client={}, balance={}", id, client, balance);
     }
 
     public UUID getId() {

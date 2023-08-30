@@ -12,15 +12,15 @@ public class AccountTest {
     @Test
     public void testDeposite() {
         Account account = new Account("client001", 50.0);
-        account.deposite(20.0);
-        assertEquals(70.0, account.getBalance());
+        account.deposite(30.0);
+        assertEquals(80.0, account.getBalance());
     }
 
     @Test
     public void testWithdraw_withBalance() {
-        Account account = new Account("client001", 50.0);
+        Account account = new Account("client001", 60.0);
         account.withdraw(20.0);
-        assertEquals(30.0, account.getBalance());
+        assertEquals(40.0, account.getBalance());
     }
 
     @Test
