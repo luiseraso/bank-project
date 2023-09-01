@@ -1,4 +1,4 @@
-rootProject.name = 'BankProject'
+rootProject.name = 'bank-project'
 include 'account-server'
 include 'account-client'
 
